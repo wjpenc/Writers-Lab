@@ -140,7 +140,7 @@ window.WL = window.WL || {}; WL.views = WL.views || {};
               latest.statement))));
     }
 
-    var courseIn = h('input.input', { type: 'text', placeholder: 'e.g. AP Language — Ms. Hartley' });
+    var courseIn = h('input.input', { type: 'text', placeholder: 'e.g. AP Language — Mrs. Carson' });
     var refIn = h('input.input', { type: 'text', placeholder: 'Optional' });
     var stmtIn = h('textarea.input', {
       rows: 8,

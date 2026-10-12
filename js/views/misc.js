@@ -204,12 +204,12 @@ window.WL = window.WL || {}; WL.views = WL.views || {};
           h('div.legal', null,
             h('p', null, 'Roughly ten minutes, and it hits every part administrators tend to ask about.'),
             h('ul', null,
-              h('li', null, h('b', null, 'As Maya Chen (student): '), 'submit a piece. Paste text containing the word “knife” to see the screening tier fire. Note that the flagged submission is held rather than rejected.'),
-              h('li', null, h('b', null, 'As Priya Raman (officer): '), 'open the review queue. The flagged piece is at the top with the passage in context. Approve it over the flag with a recorded reason — or deny it, which forces a written explanation.'),
-              h('li', null, h('b', null, 'Back as Maya: '), 'the notification is waiting, and the decision reason is on the submission.'),
-              h('li', null, h('b', null, 'As Devon Brooks (reviewer): '), 'open Needs Review — pieces with no feedback are first — and leave a comment. Try a two-word one and watch what happens.'),
-              h('li', null, h('b', null, 'As Priya again: '), 'note the author name is hidden from officers by site policy. Open the audit log.'),
-              h('li', null, h('b', null, 'As Ms. Hartley (advisor): '), 'the author name is visible. Turn the officer visibility policy on or off in Settings and watch the queue change. Offer the advisor role to another teacher and see that it does not take effect until they accept.'))))
+              h('li', null, h('b', null, 'As Shaurya Singh (student): '), 'submit a piece. Paste text containing the word “knife” to see the screening tier fire. Note that the flagged submission is held rather than rejected.'),
+              h('li', null, h('b', null, 'As Andrew Butler (officer): '), 'open the review queue. The flagged piece is at the top with the passage in context. Approve it over the flag with a recorded reason — or deny it, which forces a written explanation.'),
+              h('li', null, h('b', null, 'Back as Shaurya: '), 'the notification is waiting, and the decision reason is on the submission.'),
+              h('li', null, h('b', null, 'As Ethan Kilmer (reviewer): '), 'open Needs Review — pieces with no feedback are first — and leave a comment. Try a two-word one and watch what happens.'),
+              h('li', null, h('b', null, 'As Andrew again: '), 'note the author name is hidden from officers by site policy. Open the audit log.'),
+              h('li', null, h('b', null, 'As Mrs. Carson (advisor): '), 'the author name is visible. Turn the officer visibility policy on or off in Settings and watch the queue change. Offer the advisor role to another teacher and see that it does not take effect until they accept.'))))
       ));
   };
 })(window.WL);

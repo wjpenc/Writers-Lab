@@ -31,36 +31,36 @@ sitting without logging in and out.
 
 | Account | Role | What they can do |
 |---|---|---|
-| Maya Chen | Student | Submit work, browse approved pieces, reply to feedback on her own writing. Cannot comment on other students' work. |
-| Devon Brooks | Reviewer | Everything a student can, plus leave feedback on any approved submission and work the needs-review queue. |
-| Priya Raman | Officer | Moderation queue, reviewer applications, comment reports, accounts, audit log, analytics. |
-| Ms. Ellen Hartley | Advisor | Full authority: always sees author identities, grants and revokes officer status, transfers the advisor role. |
+| Shaurya Singh | Student | Submit work, browse approved pieces, reply to feedback on their own writing. Cannot comment on other students' work. |
+| Ethan Kilmer | Reviewer | Everything a student can, plus leave feedback on any approved submission and work the needs-review queue. |
+| Andrew Butler | Officer | Moderation queue, reviewer applications, comment reports, accounts, audit log, analytics. |
+| Mrs. Jacquie Carson | Advisor | Full authority: always sees author identities, grants and revokes officer status, transfers the advisor role. |
 
 The capability table from section 1.2 of the specification is enforced exactly.
-Switch to Maya and open `#/accounts` — you get a refusal page, not a hidden button.
+Switch to Shaurya and open `#/accounts` — you get a refusal page, not a hidden button.
 
 ---
 
 ## Suggested ten-minute walkthrough
 
-1. **As Maya Chen (Student)** — go to **Submit**. The consent screen appears
-   because she has not submitted before. On the next step, paste a paragraph
+1. **As Shaurya Singh (Student)** — go to **Submit**. The consent screen appears
+   because they have not submitted before. On the next step, paste a paragraph
    containing the word *knife*, then finish the form and submit. Watch the
    processing pipeline, then read the result: the piece is **held, not rejected**,
    with the flagged passage quoted in context.
-2. **Switch to Priya Raman (Officer)** — open the **Review Queue**. The flagged
+2. **Switch to Andrew Butler (Officer)** — open the **Review Queue**. The flagged
    piece is at the top, sorted by severity, with the passage highlighted. Note that
    the author's name says *Withheld — site policy hides authors from officers*.
    Approve it over the flag; you are asked for a reason, which is recorded.
-3. **Switch back to Maya** — the notification is waiting, and the decision is on the
-   submission. Try **Withdraw** on any of her pieces: it leaves public view
+3. **Switch back to Shaurya** — the notification is waiting, and the decision is on the
+   submission. Try **Withdraw** on any of their pieces: it leaves public view
    immediately, with no email to an administrator.
-4. **Switch to Devon Brooks (Reviewer)** — open **Needs Review**. Pieces with no
+4. **Switch to Ethan Kilmer (Reviewer)** — open **Needs Review**. Pieces with no
    feedback are first. Leave a comment on one. Then try posting a two-word comment
    and see what happens.
-5. **Switch to Ms. Hartley (Advisor)** — the author's name is now visible everywhere.
+5. **Switch to Mrs. Carson (Advisor)** — the author's name is now visible everywhere.
    In **Site Settings**, flip *Officers can see author identities* and
-   switch back to Priya to watch the queue change. In **Accounts**, offer the primary
+   switch back to Andrew to watch the queue change. In **Accounts**, offer the primary
    advisor role to Mr. Okafor and note that nothing changes until he accepts.
 6. **Open the Audit Log** — every action from the last ten minutes is there, with who
    did it, when, and why. Export it as CSV.
@@ -111,11 +111,11 @@ this too, so it is visible during a demonstration without needing this file.
 |---|---|
 | 1.2 Role model | Account switcher; any admin page as a student |
 | 1.3 Account console | Administration → Accounts, and the per-account detail dialog |
-| 1.3 Advisor transfer | Accounts, as Ms. Hartley — requires the recipient to accept |
+| 1.3 Advisor transfer | Accounts, as Mrs. Carson — requires the recipient to accept |
 | 1.4 Annual role review | Accounts → Annual role review panel |
 | 2.1 File validation | Submit → choose a file |
 | 2.2 Metadata stripping | Submit → the report after choosing a file; result screen |
-| 2.3 Consent screen | Submit, as Maya Chen |
+| 2.3 Consent screen | Submit, as Shaurya Singh |
 | 2.4 Author controls | My Work — withdraw, restore, new version, request deletion |
 | 3.1 Automated filtering | Submit a piece with flagged language; Review Queue |
 | 3.2 Review queue | Administration → Review Queue |

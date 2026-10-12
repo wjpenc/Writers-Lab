@@ -7,7 +7,7 @@ window.WL = window.WL || {};
 (function (WL) {
   'use strict';
 
-  var STORAGE_KEY = 'writers-lab-prototype-v2';
+  var STORAGE_KEY = 'writers-lab-prototype-v3';
   var listeners = [];
   var state = null;
 
@@ -33,8 +33,8 @@ window.WL = window.WL || {};
         { id: 'v_02', workId: 'w_06', versionNumber: 1, fileName: 'commonapp_draft1.docx', createdAt: WL.ago(14), note: 'Original submission' },
         { id: 'v_03', workId: 'w_06', versionNumber: 2, fileName: 'commonapp_draft2.docx', createdAt: WL.ago(7), note: 'Cut 90 words from the opening; kept feedback from version 1.' }
       ],
-      // Maya has not submitted before, so the consent screen still shows for
-      // her — it is one of the things administrators ask to see.
+      // Shaurya has not submitted before, so the consent screen still shows for
+      // them — it is one of the things administrators ask to see.
       consentGiven: { u_reviewer: true, u_officer: true, u_teacher: true },
       pendingTransfer: null,
       seq: 100

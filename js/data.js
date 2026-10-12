@@ -57,28 +57,28 @@ window.WL = window.WL || {};
 
   WL.SEED_USERS = [
     {
-      id: 'u_student', displayName: 'Maya Chen', email: 'chenma27@student.hse.k12.in.us',
+      id: 'u_student', displayName: 'Shaurya Singh', email: 'singhsh27@student.hse.k12.in.us',
       role: 'student', gradeLevel: 11, reviewerStatus: 'none', roleExpiresAt: null,
       createdAt: ago(214), lastActiveAt: ago(0, 2), suspendedAt: null,
       demoAccount: true,
       demoBlurb: 'Submits work, browses approved pieces, replies to feedback on their own writing. Cannot comment on other students’ work.'
     },
     {
-      id: 'u_reviewer', displayName: 'Devon Brooks', email: 'brookde14@student.hse.k12.in.us',
+      id: 'u_reviewer', displayName: 'Ethan Kilmer', email: 'kilmeet14@student.hse.k12.in.us',
       role: 'reviewer', gradeLevel: 12, reviewerStatus: 'approved', reviewerSince: ago(158),
       roleExpiresAt: endOfSchoolYear(), createdAt: ago(402), lastActiveAt: ago(0, 6), suspendedAt: null,
       demoAccount: true,
       demoBlurb: 'Everything a student can do, plus leaving feedback on any approved submission and working the needs-review queue.'
     },
     {
-      id: 'u_officer', displayName: 'Priya Raman', email: 'ramanpr09@student.hse.k12.in.us',
+      id: 'u_officer', displayName: 'Andrew Butler', email: 'butlean09@student.hse.k12.in.us',
       role: 'officer', gradeLevel: 12, reviewerStatus: 'approved', reviewerSince: ago(390),
       roleExpiresAt: endOfSchoolYear(), createdAt: ago(742), lastActiveAt: ago(0, 1), suspendedAt: null,
       demoAccount: true,
       demoBlurb: 'NEHS officer. Runs the moderation queue, reviewer applications, comment reports, accounts and the audit log.'
     },
     {
-      id: 'u_teacher', displayName: 'Ms. Ellen Hartley', email: 'ehartley@hse.k12.in.us',
+      id: 'u_teacher', displayName: 'Mrs. Jacquie Carson', email: 'jcarson@hse.k12.in.us',
       role: 'advisor', gradeLevel: null, reviewerStatus: 'approved',
       roleExpiresAt: null, isPrimaryAdvisor: true, createdAt: ago(760), lastActiveAt: ago(1, 3), suspendedAt: null,
       demoAccount: true,
@@ -257,7 +257,7 @@ window.WL = window.WL || {};
       description: 'Open campus lunch argument.',
       feedbackFocus: 'Argument strength', status: 'denied',
       createdAt: ago(96), moderatedAt: ago(95, 6), moderatedBy: 'u_officer',
-      denialReason: 'The central section is copied nearly verbatim from a published op-ed in the Indianapolis Star without attribution. The Writers Lab cannot host unattributed material. You are welcome to resubmit an original version, and Ms. Hartley is happy to talk through how to quote and cite a source properly.',
+      denialReason: 'The central section is copied nearly verbatim from a published op-ed in the Indianapolis Star without attribution. The Writers Lab cannot host unattributed material. You are welcome to resubmit an original version, and Mrs. Carson is happy to talk through how to quote and cite a source properly.',
       originalFileName: 'open_campus.docx', format: 'docx', fileSize: 17008,
       body: '[This submission was denied and is not published. Administrators can still view the original file and the decision record.]'
     }),
@@ -342,7 +342,7 @@ window.WL = window.WL || {};
     {
       id: 'c_02', workId: 'w_01', authorUserId: 'u_officer', authorRoleAtTime: 'officer',
       parentCommentId: null, createdAt: ago(18, 4), editedAt: null, deletedAt: null,
-      body: 'Agreeing with Devon on the ending. I want to add one thing about the last line — "It does not match anything there either" is doing something sneaky and good, because "either" is the only word in the essay that admits the sewing room did not match the house. You have been withholding that judgment for four hundred words and then you hand it over in one syllable. Do not let a workshop talk you out of it.'
+      body: 'Agreeing with Ethan on the ending. I want to add one thing about the last line — "It does not match anything there either" is doing something sneaky and good, because "either" is the only word in the essay that admits the sewing room did not match the house. You have been withholding that judgment for four hundred words and then you hand it over in one syllable. Do not let a workshop talk you out of it.'
     },
     {
       id: 'c_03', workId: 'w_01', authorUserId: 'u_10', authorRoleAtTime: 'student',
@@ -433,8 +433,8 @@ window.WL = window.WL || {};
   WL.SEED_APPLICATIONS = [
     {
       id: 'ra_01', userId: 'u_07', status: 'pending', createdAt: ago(4, 2),
-      gradeLevel: 10, englishCourse: 'Honors English 10 — Ms. Hartley',
-      teacherReference: 'Ms. Hartley',
+      gradeLevel: 10, englishCourse: 'Honors English 10 — Mrs. Carson',
+      teacherReference: 'Mrs. Carson',
       statement: 'I have been reading other people’s drafts since sixth grade, mostly because my older sister made me. What I have learned from that is that most of the time the writer already knows what is wrong and needs someone to say it out loud so they are allowed to fix it.\n\nI would want to focus on research papers and analysis, because that is what I read most and I think I would be more useful there than on poetry, where I would mostly just say I liked it.'
     },
     {
@@ -453,7 +453,7 @@ window.WL = window.WL || {};
       id: 'ra_04', userId: 'u_09', status: 'rejected', createdAt: ago(60), decidedAt: ago(56),
       decidedBy: 'u_officer', gradeLevel: 11, englishCourse: 'AP Lang',
       statement: 'I would like to be a reviewer because it would look good for NHS hours and I am a strong writer.',
-      decisionReason: 'Not approved for this term. The application does not describe how you would give feedback to another writer, which is the main thing we are evaluating. You are welcome to reapply next semester — Ms. Hartley is glad to look at a draft of a stronger application with you first.',
+      decisionReason: 'Not approved for this term. The application does not describe how you would give feedback to another writer, which is the main thing we are evaluating. You are welcome to reapply next semester — Mrs. Carson is glad to look at a draft of a stronger application with you first.',
       mayReapply: true
     }
   ];
