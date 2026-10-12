@@ -32,9 +32,9 @@ sitting without logging in and out.
 | Account | Role | What they can do |
 |---|---|---|
 | Maya Chen | Student | Submit work, browse approved pieces, reply to feedback on her own writing. Cannot comment on other students' work. |
-| Devon Brooks | Peer Reviewer | Everything a student can, plus leave feedback on any approved submission and work the needs-review queue. |
-| Priya Raman | Officer Administrator | Moderation queue, reviewer applications, comment reports, accounts, audit log, analytics. |
-| Ms. Ellen Hartley | Teacher Advisor | Full authority: always sees author identities, grants and revokes officer status, transfers the advisor role. |
+| Devon Brooks | Reviewer | Everything a student can, plus leave feedback on any approved submission and work the needs-review queue. |
+| Priya Raman | Officer | Moderation queue, reviewer applications, comment reports, accounts, audit log, analytics. |
+| Ms. Ellen Hartley | Advisor | Full authority: always sees author identities, grants and revokes officer status, transfers the advisor role. |
 
 The capability table from section 1.2 of the specification is enforced exactly.
 Switch to Maya and open `#/accounts` — you get a refusal page, not a hidden button.
@@ -48,7 +48,7 @@ Switch to Maya and open `#/accounts` — you get a refusal page, not a hidden bu
    containing the word *knife*, then finish the form and submit. Watch the
    processing pipeline, then read the result: the piece is **held, not rejected**,
    with the flagged passage quoted in context.
-2. **Switch to Priya Raman (Officer Admin)** — open the **Review Queue**. The flagged
+2. **Switch to Priya Raman (Officer)** — open the **Review Queue**. The flagged
    piece is at the top, sorted by severity, with the passage highlighted. Note that
    the author's name says *Withheld — site policy hides authors from officers*.
    Approve it over the flag; you are asked for a reason, which is recorded.
@@ -59,7 +59,7 @@ Switch to Maya and open `#/accounts` — you get a refusal page, not a hidden bu
    feedback are first. Leave a comment on one. Then try posting a two-word comment
    and see what happens.
 5. **Switch to Ms. Hartley (Advisor)** — the author's name is now visible everywhere.
-   In **Site Settings**, flip *Officer administrators can see author identities* and
+   In **Site Settings**, flip *Officers can see author identities* and
    switch back to Priya to watch the queue change. In **Accounts**, offer the primary
    advisor role to Mr. Okafor and note that nothing changes until he accepts.
 6. **Open the Audit Log** — every action from the last ten minutes is there, with who

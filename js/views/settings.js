@@ -1,6 +1,6 @@
 /* ============================================================
    views/settings.js - site settings (spec 1.2 policy, 3.1, 6.1)
-   Officer admins get a limited subset; the advisor gets all of it.
+   Officers get a limited subset; the advisor gets all of it.
    ============================================================ */
 window.WL = window.WL || {}; WL.views = WL.views || {};
 
@@ -29,22 +29,22 @@ window.WL = window.WL || {}; WL.views = WL.views || {};
       h('p.page-sub', null,
         'Every change here is written to the audit log with who made it and when. ' +
         (full
-          ? 'You are the faculty advisor, so all settings are available to you.'
-          : 'You are an officer administrator, so the policy settings that govern what officers themselves can see are read-only.')),
+          ? 'You are the advisor, so all settings are available to you.'
+          : 'You are an officer, so the policy settings that govern what officers themselves can see are read-only.')),
 
       h('div.stack', null,
         ui.card(h('h3', null, 'Author visibility policy'),
           h('div', null,
             ui.alert(full ? 'info' : 'warn', h('div', null,
               h('b', null, 'This is the decision the whole anonymity model turns on. '),
-              'Officer administrators are peers of the students submitting work. Students may write more honestly if only teachers can de-anonymise them. ' +
+              'Officers are peers of the students submitting work. Students may write more honestly if only teachers can de-anonymise them. ' +
               'It is a site setting rather than a code path so it can be changed after a conversation with the advisor, not after a deployment.')),
             h('div.mt16'),
             ui.switchLine(
-              'Officer administrators can see author identities',
+              'Officers can see author identities',
               full
-                ? 'Currently ' + (S.settings.officersCanSeeAuthors ? 'ON — officers see who wrote every submission.' : 'OFF — officers moderate without author names. The faculty advisor can always see them.')
-                : 'Only the faculty advisor can change this setting.',
+                ? 'Currently ' + (S.settings.officersCanSeeAuthors ? 'ON — officers see who wrote every submission.' : 'OFF — officers moderate without author names. The advisor can always see them.')
+                : 'Only the advisor can change this setting.',
               S.settings.officersCanSeeAuthors,
               set('officersCanSeeAuthors', 'Officer author visibility'),
               !full))),
@@ -159,7 +159,7 @@ window.WL = window.WL || {}; WL.views = WL.views || {};
         ui.card(h('h3', null, 'Annual role review'),
           h('div', null,
             ui.switchLine('Elevated roles expire at the end of the school year',
-              'Officer administrator and peer reviewer roles carry an expiry date of ' +
+              'Officer and reviewer roles carry an expiry date of ' +
               WL.fmtDate(S.settings.roleExpiresOn) + '. Expired roles fall back to the base student role automatically rather than persisting silently.',
               S.settings.roleExpiryEnabled, set('roleExpiryEnabled', 'Role expiry'), !full),
             h('div.mt16'),

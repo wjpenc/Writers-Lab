@@ -54,7 +54,7 @@ p{margin:0 0 12px}
   position:sticky;top:0;z-index:100;
 }
 .brand{display:flex;align-items:center;gap:11px;flex:0 0 auto;min-width:240px}
-.brand .mark{flex:0 0 auto}
+.brand .mark{flex:0 0 auto;display:block;width:52px;height:52px;object-fit:contain}
 .brand .word{font-size:20px;font-weight:600;color:var(--heading);letter-spacing:-.2px;white-space:nowrap}
 
 .main-nav{flex:1 1 auto;display:flex;justify-content:center;align-items:center;gap:32px;height:100%}

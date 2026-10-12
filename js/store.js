@@ -7,7 +7,7 @@ window.WL = window.WL || {};
 (function (WL) {
   'use strict';
 
-  var STORAGE_KEY = 'writers-lab-prototype-v1';
+  var STORAGE_KEY = 'writers-lab-prototype-v2';
   var listeners = [];
   var state = null;
 
@@ -89,7 +89,7 @@ window.WL = window.WL || {};
   function effectiveRole(u) {
     // Expired elevated roles fall back to the base student role (spec 1.4)
     if (!u) return 'student';
-    if (u.role === 'teacher_advisor') return u.role;
+    if (u.role === 'advisor') return u.role;
     if (state.settings.roleExpiryEnabled && u.roleExpiresAt &&
         new Date(u.roleExpiresAt).getTime() < Date.now()) return 'student';
     return u.role;
@@ -416,7 +416,7 @@ window.WL = window.WL || {};
     audit('comment.approve', 'comment', commentId, 'Probationary comment released.');
     var w = work(c.workId);
     if (w) notify(w.authorUserId, 'comment.new', 'New feedback on "' + w.title + '"',
-      'A peer reviewer left a comment on your submission.', '#/work/' + c.workId);
+      'A reviewer left a comment on your submission.', '#/work/' + c.workId);
     emit();
   };
 
@@ -464,7 +464,7 @@ window.WL = window.WL || {};
     u.reviewerStatus = 'pending';
     audit('application.submit', 'user', u.id, null);
     notifyAdmins('application.new', 'New reviewer application',
-      u.gradeLevel ? ('A grade ' + u.gradeLevel + ' student applied to be a peer reviewer.') : 'A new reviewer application arrived.',
+      u.gradeLevel ? ('A grade ' + u.gradeLevel + ' student applied to be a reviewer.') : 'A new reviewer application arrived.',
       '#/applications', 'notifyAdminNewApplication');
     emit();
   };
@@ -504,7 +504,7 @@ window.WL = window.WL || {};
       u.reviewerSince = nowISO();
       u.roleExpiresAt = state.settings.roleExpiresOn;
       audit('reviewer.grant', 'user', userId, reason);
-      notify(userId, 'role.changed', 'You are now a peer reviewer', reason || 'Granted by an administrator.', '#/notifications');
+      notify(userId, 'role.changed', 'You are now a reviewer', reason || 'Granted by an administrator.', '#/notifications');
     } else {
       u.reviewerStatus = 'revoked';
       if (u.role === 'reviewer') u.role = 'student';
@@ -517,15 +517,15 @@ window.WL = window.WL || {};
   A.setAdminStatus = function (userId, grant, reason) {
     var u = user(userId); if (!u) return;
     if (grant) {
-      u.role = 'officer_admin';
+      u.role = 'officer';
       u.reviewerStatus = 'approved';
       u.roleExpiresAt = state.settings.roleExpiresOn;
       audit('admin.grant', 'user', userId, reason);
-      notify(userId, 'role.changed', 'You are now an officer administrator', reason || 'Granted by the faculty advisor.', '#/notifications');
+      notify(userId, 'role.changed', 'You are now an officer', reason || 'Granted by the advisor.', '#/notifications');
     } else {
       u.role = u.reviewerStatus === 'approved' ? 'reviewer' : 'student';
       audit('admin.revoke', 'user', userId, reason);
-      notify(userId, 'role.changed', 'Officer administrator status removed', reason || 'Revoked by the faculty advisor.', '#/notifications');
+      notify(userId, 'role.changed', 'Officer status removed', reason || 'Revoked by the advisor.', '#/notifications');
     }
     emit();
   };
@@ -567,7 +567,7 @@ window.WL = window.WL || {};
     };
     audit('advisor.transfer_proposed', 'user', toUserId, reason);
     notify(toUserId, 'advisor.transfer', 'You have been offered the primary advisor role',
-      userName(state.currentUserId) + ' proposed transferring the primary faculty advisor role to you. It does not take effect until you accept.',
+      userName(state.currentUserId) + ' proposed transferring the primary advisor role to you. It does not take effect until you accept.',
       '#/accounts');
     emit();
   };
@@ -584,7 +584,7 @@ window.WL = window.WL || {};
     if (t.toUserId !== state.currentUserId) return;
     var from = user(t.fromUserId), to = user(t.toUserId);
     if (from) from.isPrimaryAdvisor = false;
-    if (to) { to.isPrimaryAdvisor = true; to.role = 'teacher_advisor'; }
+    if (to) { to.isPrimaryAdvisor = true; to.role = 'advisor'; }
     audit('advisor.transfer_accepted', 'user', t.toUserId, 'Primary advisor role transferred and accepted.');
     notify(t.fromUserId, 'advisor.transfer', 'Primary advisor transfer completed',
       userName(t.toUserId) + ' accepted the primary advisor role.', '#/accounts');

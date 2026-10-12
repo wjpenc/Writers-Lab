@@ -28,9 +28,9 @@ window.WL = window.WL || {};
 
   WL.ROLES = {
     student: { key: 'student', label: 'Student', short: 'Student', rank: 1, color: 'grey' },
-    reviewer: { key: 'reviewer', label: 'Peer Reviewer', short: 'Reviewer', rank: 2, color: 'cyan' },
-    officer_admin: { key: 'officer_admin', label: 'Officer Administrator', short: 'Officer Admin', rank: 3, color: 'purple' },
-    teacher_advisor: { key: 'teacher_advisor', label: 'Teacher Advisor', short: 'Advisor', rank: 4, color: 'gold' }
+    reviewer: { key: 'reviewer', label: 'Reviewer', short: 'Reviewer', rank: 2, color: 'cyan' },
+    officer: { key: 'officer', label: 'Officer', short: 'Officer', rank: 3, color: 'purple' },
+    advisor: { key: 'advisor', label: 'Advisor', short: 'Advisor', rank: 4, color: 'gold' }
   };
 
   WL.STATUS = {
@@ -72,17 +72,17 @@ window.WL = window.WL || {};
     },
     {
       id: 'u_officer', displayName: 'Priya Raman', email: 'ramanpr09@student.hse.k12.in.us',
-      role: 'officer_admin', gradeLevel: 12, reviewerStatus: 'approved', reviewerSince: ago(390),
+      role: 'officer', gradeLevel: 12, reviewerStatus: 'approved', reviewerSince: ago(390),
       roleExpiresAt: endOfSchoolYear(), createdAt: ago(742), lastActiveAt: ago(0, 1), suspendedAt: null,
       demoAccount: true,
       demoBlurb: 'NEHS officer. Runs the moderation queue, reviewer applications, comment reports, accounts and the audit log.'
     },
     {
       id: 'u_teacher', displayName: 'Ms. Ellen Hartley', email: 'ehartley@hse.k12.in.us',
-      role: 'teacher_advisor', gradeLevel: null, reviewerStatus: 'approved',
+      role: 'advisor', gradeLevel: null, reviewerStatus: 'approved',
       roleExpiresAt: null, isPrimaryAdvisor: true, createdAt: ago(760), lastActiveAt: ago(1, 3), suspendedAt: null,
       demoAccount: true,
-      demoBlurb: 'Primary faculty advisor. Full authority: can always de-anonymize authors, grant or revoke officer status, and transfer the advisor role.'
+      demoBlurb: 'Primary advisor. Full authority: can always de-anonymize authors, grant or revoke officer status, and transfer the advisor role.'
     },
 
     /* --- background accounts (not switchable, populate the console) --- */
@@ -95,7 +95,7 @@ window.WL = window.WL || {};
     { id: 'u_11', displayName: 'Isaiah Bell', email: 'bellis21@student.hse.k12.in.us', role: 'student', gradeLevel: 12, reviewerStatus: 'revoked', roleExpiresAt: null, createdAt: ago(370), lastActiveAt: ago(27), suspendedAt: null },
     { id: 'u_12', displayName: 'Nora Kaminski', email: 'kaminsno3@student.hse.k12.in.us', role: 'student', gradeLevel: 9, reviewerStatus: 'none', roleExpiresAt: null, createdAt: ago(30), lastActiveAt: ago(8), suspendedAt: null },
     { id: 'u_13', displayName: 'Tobias Adeyemi', email: 'adeyemto6@student.hse.k12.in.us', role: 'student', gradeLevel: 11, reviewerStatus: 'none', roleExpiresAt: null, createdAt: ago(55), lastActiveAt: ago(12), suspendedAt: null },
-    { id: 'u_14', displayName: 'Mr. Daniel Okafor', email: 'dokafor@hse.k12.in.us', role: 'teacher_advisor', gradeLevel: null, reviewerStatus: 'approved', roleExpiresAt: null, isPrimaryAdvisor: false, createdAt: ago(180), lastActiveAt: ago(9), suspendedAt: null },
+    { id: 'u_14', displayName: 'Mr. Daniel Okafor', email: 'dokafor@hse.k12.in.us', role: 'advisor', gradeLevel: null, reviewerStatus: 'approved', roleExpiresAt: null, isPrimaryAdvisor: false, createdAt: ago(180), lastActiveAt: ago(9), suspendedAt: null },
     { id: 'u_15', displayName: 'Ruby Santoro', email: 'santoror12@student.hse.k12.in.us', role: 'student', gradeLevel: 10, reviewerStatus: 'none', roleExpiresAt: null, createdAt: ago(210), lastActiveAt: ago(46), suspendedAt: ago(22), suspendReason: 'Repeated reported comments during the fall pilot. Suspended pending advisor conversation.' }
   ];
 
@@ -340,7 +340,7 @@ window.WL = window.WL || {};
       body: 'What is working: the lamp. You resist explaining it, and that restraint is the whole essay. When your grandmother says "the lamp" and you do not add a sentence telling us what it means, I believed her and I believed you.\n\nWhat is unclear: the second paragraph does a lot of scene-setting for a house we then leave. The plastic runner is a great detail but the doilies and the good china are doing the same job as each other.\n\nOne concrete suggestion: cut the good china, keep the runner, and give the space to the five-seconds-then-quiet rhythm of the machine. That is the sound of the essay and it only gets one sentence.'
     },
     {
-      id: 'c_02', workId: 'w_01', authorUserId: 'u_officer', authorRoleAtTime: 'officer_admin',
+      id: 'c_02', workId: 'w_01', authorUserId: 'u_officer', authorRoleAtTime: 'officer',
       parentCommentId: null, createdAt: ago(18, 4), editedAt: null, deletedAt: null,
       body: 'Agreeing with Devon on the ending. I want to add one thing about the last line — "It does not match anything there either" is doing something sneaky and good, because "either" is the only word in the essay that admits the sewing room did not match the house. You have been withholding that judgment for four hundred words and then you hand it over in one syllable. Do not let a workshop talk you out of it.'
     },
@@ -370,7 +370,7 @@ window.WL = window.WL || {};
       body: 'Oh. Yes. I think I kept the last paragraph because writing it down was how I figured out I was stuck, and then I never took the scaffolding off. Thank you.'
     },
     {
-      id: 'c_08', workId: 'w_04', authorUserId: 'u_officer', authorRoleAtTime: 'officer_admin',
+      id: 'c_08', workId: 'w_04', authorUserId: 'u_officer', authorRoleAtTime: 'officer',
       parentCommentId: null, createdAt: ago(13), editedAt: null, deletedAt: null,
       body: 'The Claire Luce letter is a real find and it is doing heavy lifting, so it needs a real citation — right now a reader has to take your word for both the letter and its contents. Steinbeck: A Life in Letters has it, and your teacher will want the page.\n\nThe last paragraph is the best paragraph. "It functions as an accusation of the reader" is the thesis. Consider whether it should be the first sentence instead of the last.'
     },
@@ -391,7 +391,7 @@ window.WL = window.WL || {};
       body: '[removed]'
     },
     {
-      id: 'c_12', workId: 'w_07', authorUserId: 'u_teacher', authorRoleAtTime: 'teacher_advisor',
+      id: 'c_12', workId: 'w_07', authorUserId: 'u_teacher', authorRoleAtTime: 'advisor',
       parentCommentId: null, createdAt: ago(55), editedAt: null, deletedAt: null,
       body: 'This is the strongest piece of student reporting I have read here. Two notes.\n\nFirst, the survey: one hundred and twelve parents outside three polling locations is a real number, and you should say how you selected them, because the first thing a skeptical reader will ask is whether you stood outside the precinct most likely to agree with you.\n\nSecond, Ostrowski gets the only quote. Find one board member who opposed the measure and give them the same courtesy, even if their answer is worse for your piece. Especially then.'
     },
@@ -481,7 +481,7 @@ window.WL = window.WL || {};
   /* ---------------- Notifications ---------------- */
 
   WL.SEED_NOTIFICATIONS = [
-    { id: 'n_01', userId: 'u_student', type: 'comment.new', createdAt: ago(9, 12), readAt: null, title: 'New feedback on "Nobody Warns You About the Drive Home"', body: 'A peer reviewer left a comment on your submission.', link: '#/work/w_03' },
+    { id: 'n_01', userId: 'u_student', type: 'comment.new', createdAt: ago(9, 12), readAt: null, title: 'New feedback on "Nobody Warns You About the Drive Home"', body: 'A reviewer left a comment on your submission.', link: '#/work/w_03' },
     { id: 'n_02', userId: 'u_student', type: 'work.approved', createdAt: ago(11, 16), readAt: ago(11), title: 'Your submission was approved', body: '"Nobody Warns You About the Drive Home" is now visible to other users.', link: '#/work/w_03' },
     { id: 'n_03', userId: 'u_student', type: 'work.withdrawn', createdAt: ago(16), readAt: ago(16), title: 'Submission withdrawn', body: 'You withdrew "Six Weeks at the Animal Shelter". It is no longer visible to other users.', link: '#/mywork' },
 
@@ -489,13 +489,13 @@ window.WL = window.WL || {};
     { id: 'n_05', userId: 'u_reviewer', type: 'work.approved', createdAt: ago(8, 20), readAt: ago(8), title: 'Your submission was approved', body: '"Two Poems: Interstate 69, and After the Storm Sirens" is now visible to other users.', link: '#/work/w_05' },
 
     { id: 'n_06', userId: 'u_officer', type: 'flag.high', createdAt: ago(1, 5), readAt: null, title: 'High-severity flag raised', body: '"The Last Bell" was flagged for violence and held from publication. Priority queue.', link: '#/queue' },
-    { id: 'n_07', userId: 'u_officer', type: 'application.new', createdAt: ago(1, 8), readAt: null, title: 'New reviewer application', body: 'A 9th grade student applied to be a peer reviewer.', link: '#/applications' },
+    { id: 'n_07', userId: 'u_officer', type: 'application.new', createdAt: ago(1, 8), readAt: null, title: 'New reviewer application', body: 'A 9th grade student applied to be a reviewer.', link: '#/applications' },
     { id: 'n_08', userId: 'u_officer', type: 'comment.reported', createdAt: ago(2, 6), readAt: null, title: 'A comment was reported', body: 'Reason given: the comment is not substantive feedback.', link: '#/reports' },
     { id: 'n_09', userId: 'u_officer', type: 'work.new', createdAt: ago(0, 9), readAt: null, title: 'New submission awaiting review', body: '"Untitled (draft about my aunt)" entered the queue.', link: '#/queue' },
 
     { id: 'n_10', userId: 'u_teacher', type: 'flag.high', createdAt: ago(1, 5), readAt: null, title: 'High-severity flag raised', body: '"The Last Bell" was flagged for violence and held from publication.', link: '#/queue' },
-    { id: 'n_11', userId: 'u_teacher', type: 'role.expiring', createdAt: ago(0, 4), readAt: null, title: '2 elevated roles expire at the end of this school year', body: 'Officer administrator and peer reviewer roles need to be re-confirmed or allowed to lapse.', link: '#/accounts' },
-    { id: 'n_12', userId: 'u_teacher', type: 'application.new', createdAt: ago(1, 8), readAt: ago(1), title: 'New reviewer application', body: 'A 9th grade student applied to be a peer reviewer.', link: '#/applications' }
+    { id: 'n_11', userId: 'u_teacher', type: 'role.expiring', createdAt: ago(0, 4), readAt: null, title: '2 elevated roles expire at the end of this school year', body: 'Officer and reviewer roles need to be re-confirmed or allowed to lapse.', link: '#/accounts' },
+    { id: 'n_12', userId: 'u_teacher', type: 'application.new', createdAt: ago(1, 8), readAt: ago(1), title: 'New reviewer application', body: 'A 9th grade student applied to be a reviewer.', link: '#/applications' }
   ];
 
   /* ---------------- Reviewer claims ---------------- */

@@ -12,16 +12,11 @@ window.WL = window.WL || {};
   /* ---------------- Brand mark ---------------- */
 
   function brandMark() {
-    var wrap = document.createElement('span');
-    wrap.className = 'mark';
-    wrap.style.display = 'inline-flex';
-    wrap.innerHTML =
-      '<svg width="34" height="30" viewBox="0 0 34 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">' +
-      '<path d="M9 3 L17 11 L9 19 L1 11 Z" fill="#e02a35"/>' +
-      '<path d="M23 3 L31 11 L23 19 L15 11 Z" fill="#1890ff"/>' +
-      '<path d="M4 25 h26" stroke="#1f1f1f" stroke-width="2.2" stroke-linecap="round"/>' +
-      '</svg>';
-    return wrap.firstChild;
+    return h('img.mark', {
+      src: 'assets/nehs-logo.png',
+      alt: 'National English Honor Society, Hamilton Southeastern High School',
+      width: '52', height: '52'
+    });
   }
 
   /* ---------------- Navigation ---------------- */
@@ -186,7 +181,7 @@ window.WL = window.WL || {};
           type: 'button',
           onclick: function () { openDropdown = null; location.hash = '#/apply'; }
         }, h('span', { style: 'color:#1890ff;margin-top:2px' }, icon('award', 16)),
-          h('span.who', null, h('b', null, 'Apply to be a peer reviewer'))) : null,
+          h('span.who', null, h('b', null, 'Apply to be a reviewer'))) : null,
         h('button.dd-item', {
           type: 'button',
           onclick: function () { openDropdown = null; location.hash = '#/about'; }

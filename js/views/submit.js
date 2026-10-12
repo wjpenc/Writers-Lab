@@ -40,9 +40,9 @@ window.WL = window.WL || {}; WL.views = WL.views || {};
   function stepConsent() {
     var c = f.consent;
     var items = [
-      ['visible', 'I understand that my work will be visible to other users of the Writers Lab once it is approved, and that approved peer reviewers will be able to leave written feedback on it.'],
+      ['visible', 'I understand that my work will be visible to other users of the Writers Lab once it is approved, and that approved reviewers will be able to leave written feedback on it.'],
       ['ownership', 'I understand that I keep ownership of my writing. Submitting it here does not give the school or the club any right to publish it elsewhere.'],
-      ['moderation', 'I understand that every submission is reviewed by an officer administrator or the faculty advisor before it is published, and that it may be denied or returned to me for changes.'],
+      ['moderation', 'I understand that every submission is reviewed by an officer or the advisor before it is published, and that it may be denied or returned to me for changes.'],
       ['withdraw', 'I understand that I can withdraw my work at any time, and that I can request permanent deletion under the retention policy.']
     ];
     var allChecked = items.every(function (it) { return c[it[0]]; });
@@ -440,7 +440,7 @@ window.WL = window.WL || {}; WL.views = WL.views || {};
     return h('div.container.mid', null,
       h('h1.page-title.with-sub', null, 'Submit Work'),
       h('p.page-sub', null,
-        'Everything you submit is read by an officer administrator or the faculty advisor before anyone else sees it.'),
+        'Everything you submit is read by an officer or the advisor before anyone else sees it.'),
       steps(f.step),
       content
     );
