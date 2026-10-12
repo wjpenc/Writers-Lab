@@ -224,7 +224,7 @@ window.WL = window.WL || {}; WL.views = WL.views || {};
       return h('div.container.narrow', null,
         h('h1.page-title', null, 'Needs Review'),
         ui.alert('info', h('div', null,
-          h('b', null, 'This queue is for approved peer reviewers. '),
+          h('b', null, 'This queue is for approved reviewers. '),
           'It lists the pieces that have waited longest with the least feedback. ',
           h('button.btn-link', { type: 'button', onclick: function () { location.hash = '#/apply'; } },
             'Apply to become a reviewer'), '.')));

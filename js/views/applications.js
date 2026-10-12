@@ -56,7 +56,7 @@ window.WL = window.WL || {}; WL.views = WL.views || {};
             type: 'button',
             onclick: function () {
               ui.reasonModal({
-                title: 'Approve ' + u.displayName + ' as a peer reviewer',
+                title: 'Approve ' + u.displayName + ' as a reviewer',
                 required: false, confirmLabel: 'Approve',
                 intro: 'They will be able to comment on any approved submission. ' +
                   (S.settings.probationaryComments
@@ -65,7 +65,7 @@ window.WL = window.WL || {}; WL.views = WL.views || {};
                 label: 'Note (optional)',
                 onConfirm: function (r) {
                   A.decideApplication(a.id, 'approved', r || 'Approved.');
-                  ui.toast(u.displayName + ' is now a peer reviewer.');
+                  ui.toast(u.displayName + ' is now a reviewer.');
                 }
               });
             }
@@ -116,10 +116,10 @@ window.WL = window.WL || {}; WL.views = WL.views || {};
 
     if (WL.can('commentAnywhere')) {
       return h('div.container.narrow', null,
-        h('h1.page-title', null, 'Peer Reviewer'),
+        h('h1.page-title', null, 'Reviewer'),
         ui.card(null, h('div', null,
           ui.alert('ok', h('div', null,
-            h('b', null, 'You are already an approved peer reviewer. '),
+            h('b', null, 'You are already an approved reviewer. '),
             'You can leave feedback on any approved submission.')),
           h('div.btn-row.mt24', null,
             h('button.btn.btn-primary', {
@@ -129,18 +129,18 @@ window.WL = window.WL || {}; WL.views = WL.views || {};
 
     if (latest && latest.status === 'pending') {
       return h('div.container.narrow', null,
-        h('h1.page-title', null, 'Peer Reviewer'),
+        h('h1.page-title', null, 'Reviewer'),
         ui.card(h('h3', null, 'Your application'),
           h('div', null,
             ui.alert('info', h('div', null,
               h('b', null, 'Submitted ' + WL.fmtAgo(latest.createdAt) + '. '),
-              'An officer administrator or the faculty advisor will decide on it. You will be notified either way.')),
+              'An officer or the advisor will decide on it. You will be notified either way.')),
             h('div.mt24'),
             h('div', { style: 'white-space:pre-wrap;line-height:1.8;background:#fafafa;border:1px solid #f0f0f0;border-radius:4px;padding:16px 18px' },
               latest.statement))));
     }
 
-    var courseIn = h('input.input', { type: 'text', placeholder: 'e.g. AP Language — Ms. Hartley' });
+    var courseIn = h('input.input', { type: 'text', placeholder: 'e.g. AP Language — Mrs. Carson' });
     var refIn = h('input.input', { type: 'text', placeholder: 'Optional' });
     var stmtIn = h('textarea.input', {
       rows: 8,
@@ -148,9 +148,9 @@ window.WL = window.WL || {}; WL.views = WL.views || {};
     });
 
     return h('div.container.narrow', null,
-      h('h1.page-title.with-sub', null, 'Apply to be a Peer Reviewer'),
+      h('h1.page-title.with-sub', null, 'Apply to be a Reviewer'),
       h('p.page-sub', null,
-        'Peer reviewers can leave written feedback on any approved submission. Anyone signed in may apply.'),
+        'Reviewers can leave written feedback on any approved submission. Anyone signed in may apply.'),
 
       latest && latest.status === 'rejected' ? h('div.mb24', null,
         ui.alert('warn', h('div', null,

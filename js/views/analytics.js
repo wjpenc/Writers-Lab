@@ -95,7 +95,7 @@ window.WL = window.WL || {}; WL.views = WL.views || {};
         ['Published works', approved.length],
         ['Comments written', liveComments.length],
         ['Registered accounts', S.users.length],
-        ['Approved peer reviewers', S.users.filter(function (u) { return u.reviewerStatus === 'approved'; }).length],
+        ['Approved reviewers', S.users.filter(function (u) { return u.reviewerStatus === 'approved'; }).length],
         ['Active reviewers (60 days)', activeReviewers],
         ['Works receiving feedback', withFeedback + ' of ' + approved.length + ' (' + coverage + '%)'],
         ['Average time to first comment', avgHours.toFixed(1) + ' hours'],
@@ -224,10 +224,10 @@ window.WL = window.WL || {}; WL.views = WL.views || {};
                 h('dt', null, 'Total accounts'), h('dd', null, String(S.users.length)),
                 h('dt', null, 'Approved reviewers'),
                 h('dd', null, String(S.users.filter(function (u) { return u.reviewerStatus === 'approved'; }).length)),
-                h('dt', null, 'Officer administrators'),
-                h('dd', null, String(S.users.filter(function (u) { return u.role === 'officer_admin'; }).length)),
-                h('dt', null, 'Teacher advisors'),
-                h('dd', null, String(S.users.filter(function (u) { return u.role === 'teacher_advisor'; }).length)),
+                h('dt', null, 'Officers'),
+                h('dd', null, String(S.users.filter(function (u) { return u.role === 'officer'; }).length)),
+                h('dt', null, 'Advisors'),
+                h('dd', null, String(S.users.filter(function (u) { return u.role === 'advisor'; }).length)),
                 h('dt', null, 'Suspended'),
                 h('dd', null, String(S.users.filter(function (u) { return u.suspendedAt; }).length)))))
         )

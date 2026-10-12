@@ -77,10 +77,10 @@ window.WL = window.WL || {}; WL.views = WL.views || {};
   WL.views.terms = function () {
     return h('div.container.narrow', null,
       h('h1.page-title.with-sub', null, 'Terms of Use'),
-      h('p.page-sub', null, 'Draft for advisor and district review. Nothing here is legal advice, and it should be read by the faculty advisor — and by district staff if the district requires it — before the site opens.'),
+      h('p.page-sub', null, 'Draft for advisor and district review. Nothing here is legal advice, and it should be read by the advisor — and by district staff if the district requires it — before the site opens.'),
       ui.card(null, h('div.legal', null,
         h('h2', null, 'Who may use this site'),
-        h('p', null, 'The Writers Lab is operated by the school’s National English Honor Society chapter under the supervision of a faculty advisor. Accounts are for current students and staff of the school.'),
+        h('p', null, 'The Writers Lab is operated by the school’s National English Honor Society chapter under the supervision of an advisor. Accounts are for current students and staff of the school.'),
 
         h('h2', null, 'What you may submit'),
         h('p', null, 'Submit your own writing. Do not submit:'),
@@ -100,18 +100,18 @@ window.WL = window.WL || {}; WL.views = WL.views || {};
           h('li', null, 'Do not attempt to identify an anonymous author, and do not share what you read here outside the site.')),
 
         h('h2', null, 'Moderation and enforcement'),
-        h('p', null, 'Every submission is read by an officer administrator or the faculty advisor before publication. Denials come with a written reason. Comments may be removed, and reviewer status revoked, with the reason recorded in an audit log that administrators cannot edit.'),
+        h('p', null, 'Every submission is read by an officer or the advisor before publication. Denials come with a written reason. Comments may be removed, and reviewer status revoked, with the reason recorded in an audit log that administrators cannot edit.'),
         h('p', null, 'Automated screening flags submissions for human attention. It never rejects anything on its own, and a flag is not an accusation — most flags are ordinary writing.'),
 
         h('h2', null, 'Your control over your work'),
         h('p', null, 'You keep ownership of everything you write. Submitting it here does not give the school or the club any right to publish it elsewhere. You can withdraw a submission from public view at any time, yourself, without asking anyone. You can request permanent deletion, subject to the retention policy.'),
 
         h('h2', null, 'Anonymity, and its limits'),
-        h('p', null, 'Your name is not shown to other students, and it is not present in the file they can download. Administrators can see it, subject to the site’s author-visibility setting; the faculty advisor always can.'),
+        h('p', null, 'Your name is not shown to other students, and it is not present in the file they can download. Administrators can see it, subject to the site’s author-visibility setting; the advisor always can.'),
         h('p', null, 'The system removes hidden file metadata automatically. It cannot remove your name if you typed it into the body of your document, into a header, or into a footer.'),
 
         h('h2', null, 'Safety'),
-        h('p', null, 'If writing submitted here suggests that a student may be at risk of harm, the faculty advisor will follow the school’s existing reporting obligations. Anonymity on this site does not override those obligations.')
+        h('p', null, 'If writing submitted here suggests that a student may be at risk of harm, the advisor will follow the school’s existing reporting obligations. Anonymity on this site does not override those obligations.')
       )));
   };
 
@@ -129,7 +129,7 @@ window.WL = window.WL || {}; WL.views = WL.views || {};
           h('li', null, h('b', null, 'Activity: '), 'when you last used the site.')),
 
         h('h2', null, 'Who can see what'),
-        h('p', null, 'Author names are stored in the database and shown only to roles permitted to see them. Whether officer administrators — who are students themselves — can see author names is a site setting decided by the faculty advisor.'),
+        h('p', null, 'Author names are stored in the database and shown only to roles permitted to see them. Whether officers — who are students themselves — can see author names is a site setting decided by the advisor.'),
         h('p', null, 'Comment authors are never anonymous to administrators, even on submissions where the writer is. This is deliberate: peer review is where one student writes directly about another student’s work, and someone has to be accountable for what is written.'),
         h('p', null, 'No student data is sold, shared with advertisers, or used to train anything.'),
 
@@ -138,7 +138,7 @@ window.WL = window.WL || {}; WL.views = WL.views || {};
         h('p', null, 'Files are served through authenticated, time-limited links rather than from a public storage path.'),
 
         h('h2', null, 'How long it is kept'),
-        h('p', null, 'Set by the school’s retention policy, which the faculty advisor is responsible for establishing before launch. The decision about what happens to the archive if the program ends is documented in the operations handbook rather than left to whoever is holding the password.'),
+        h('p', null, 'Set by the school’s retention policy, which the advisor is responsible for establishing before launch. The decision about what happens to the archive if the program ends is documented in the operations handbook rather than left to whoever is holding the password.'),
 
         h('h2', null, 'Deleting your data'),
         h('p', null, 'You can withdraw any submission from public view immediately and without approval. You can request permanent deletion through the site; the request and its date are recorded, and the work is withdrawn from view in the meantime.'),
@@ -154,7 +154,7 @@ window.WL = window.WL || {}; WL.views = WL.views || {};
           h('li', null, 'Automated, tested backups of the database and of stored files.')),
 
         h('h2', null, 'Who to contact'),
-        h('p', null, 'The faculty advisor is the point of contact for any question about data on this site, including from a parent or guardian.')
+        h('p', null, 'The advisor is the point of contact for any question about data on this site, including from a parent or guardian.')
       )));
   };
 
@@ -204,12 +204,12 @@ window.WL = window.WL || {}; WL.views = WL.views || {};
           h('div.legal', null,
             h('p', null, 'Roughly ten minutes, and it hits every part administrators tend to ask about.'),
             h('ul', null,
-              h('li', null, h('b', null, 'As Maya Chen (student): '), 'submit a piece. Paste text containing the word “knife” to see the screening tier fire. Note that the flagged submission is held rather than rejected.'),
-              h('li', null, h('b', null, 'As Priya Raman (officer): '), 'open the review queue. The flagged piece is at the top with the passage in context. Approve it over the flag with a recorded reason — or deny it, which forces a written explanation.'),
-              h('li', null, h('b', null, 'Back as Maya: '), 'the notification is waiting, and the decision reason is on the submission.'),
-              h('li', null, h('b', null, 'As Devon Brooks (reviewer): '), 'open Needs Review — pieces with no feedback are first — and leave a comment. Try a two-word one and watch what happens.'),
-              h('li', null, h('b', null, 'As Priya again: '), 'note the author name is hidden from officers by site policy. Open the audit log.'),
-              h('li', null, h('b', null, 'As Ms. Hartley (advisor): '), 'the author name is visible. Turn the officer visibility policy on or off in Settings and watch the queue change. Offer the advisor role to another teacher and see that it does not take effect until they accept.'))))
+              h('li', null, h('b', null, 'As Shaurya Singh (student): '), 'submit a piece. Paste text containing the word “knife” to see the screening tier fire. Note that the flagged submission is held rather than rejected.'),
+              h('li', null, h('b', null, 'As Andrew Butler (officer): '), 'open the review queue. The flagged piece is at the top with the passage in context. Approve it over the flag with a recorded reason — or deny it, which forces a written explanation.'),
+              h('li', null, h('b', null, 'Back as Shaurya: '), 'the notification is waiting, and the decision reason is on the submission.'),
+              h('li', null, h('b', null, 'As Ethan Kilmer (reviewer): '), 'open Needs Review — pieces with no feedback are first — and leave a comment. Try a two-word one and watch what happens.'),
+              h('li', null, h('b', null, 'As Andrew again: '), 'note the author name is hidden from officers by site policy. Open the audit log.'),
+              h('li', null, h('b', null, 'As Mrs. Carson (advisor): '), 'the author name is visible. Turn the officer visibility policy on or off in Settings and watch the queue change. Offer the advisor role to another teacher and see that it does not take effect until they accept.'))))
       ));
   };
 })(window.WL);

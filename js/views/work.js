@@ -97,7 +97,7 @@ window.WL = window.WL || {}; WL.views = WL.views || {};
           onclick: function () {
             ui.reasonModal({
               title: 'Report this comment',
-              intro: 'Reports go to the officer administrators and the faculty advisor. Comment authors are never anonymous to them.',
+              intro: 'Reports go to the officers and the advisor. Comment authors are never anonymous to them.',
               label: 'Why are you reporting this comment?',
               confirmLabel: 'Submit report',
               onConfirm: function (reason) {
@@ -187,10 +187,10 @@ window.WL = window.WL || {}; WL.views = WL.views || {};
     if (!canComment) {
       return ui.alert('info', h('div', null,
         h('b', null, 'You can read feedback here, but not leave it. '),
-        'Only approved peer reviewers and administrators may comment on another student’s work. ',
+        'Only approved reviewers and administrators may comment on another student’s work. ',
         h('button.btn-link', {
           type: 'button', onclick: function () { location.hash = '#/apply'; }
-        }, 'Apply to become a peer reviewer'),
+        }, 'Apply to become a reviewer'),
         '.'
       ));
     }

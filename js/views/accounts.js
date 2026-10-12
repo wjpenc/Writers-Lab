@@ -107,7 +107,7 @@ window.WL = window.WL || {}; WL.views = WL.views || {};
           h('div.btn-row.mt16', null,
             h('button.btn.btn-primary', {
               type: 'button',
-              onclick: function () { A.acceptTransfer(); ui.toast('You are now the primary faculty advisor.'); }
+              onclick: function () { A.acceptTransfer(); ui.toast('You are now the primary advisor.'); }
             }, 'Accept the role'),
             h('button.btn', {
               type: 'button', onclick: function () { A.cancelTransfer(); ui.toast('Transfer declined.'); }
@@ -128,7 +128,7 @@ window.WL = window.WL || {}; WL.views = WL.views || {};
     if (!WL.can('transferAdvisor') || !me.isPrimaryAdvisor) return null;
 
     var teachers = WL.store.state.users.filter(function (u) {
-      return u.role === 'teacher_advisor' && u.id !== me.id;
+      return u.role === 'advisor' && u.id !== me.id;
     });
 
     return ui.card(h('h3', null, 'Transfer the primary advisor role'),
@@ -157,7 +157,7 @@ window.WL = window.WL || {}; WL.views = WL.views || {};
     var S = WL.store.state;
     if (!S.settings.roleExpiryEnabled) return null;
     var elevated = S.users.filter(function (u) {
-      return WL.roleRank(u.role) >= 2 && u.role !== 'teacher_advisor' && u.roleExpiresAt;
+      return WL.roleRank(u.role) >= 2 && u.role !== 'advisor' && u.roleExpiresAt;
     });
     if (!elevated.length) return null;
 
@@ -266,7 +266,7 @@ window.WL = window.WL || {}; WL.views = WL.views || {};
             var acts = [];
             acts.push(h('button.btn-link', { type: 'button', onclick: function () { detailModal(u); } }, 'Details'));
 
-            if (u.role !== 'teacher_advisor') {
+            if (u.role !== 'advisor') {
               acts.push(h('button.btn-link', {
                 type: 'button',
                 onclick: function () {
@@ -282,17 +282,17 @@ window.WL = window.WL || {}; WL.views = WL.views || {};
               }, u.reviewerStatus === 'approved' ? 'Revoke reviewer' : 'Make reviewer'));
             }
 
-            if (WL.can('grantAdmin') && u.role !== 'teacher_advisor') {
-              var isAdmin = u.role === 'officer_admin';
+            if (WL.can('grantAdmin') && u.role !== 'advisor') {
+              var isAdmin = u.role === 'officer';
               acts.push(h('button.btn-link', {
                 type: 'button',
                 onclick: function () {
                   ui.reasonModal({
-                    title: (isAdmin ? 'Remove' : 'Grant') + ' officer administrator status',
+                    title: (isAdmin ? 'Remove' : 'Grant') + ' officer status',
                     danger: isAdmin, confirmLabel: isAdmin ? 'Remove status' : 'Grant status',
                     intro: isAdmin
                       ? 'They keep reviewer status and their past comments keep the officer badge they carried at the time.'
-                      : 'Officer administrators can moderate submissions, decide reviewer applications, delete comments and manage accounts. Only the faculty advisor can grant this.',
+                      : 'Officers can moderate submissions, decide reviewer applications, delete comments and manage accounts. Only the advisor can grant this.',
                     label: 'Reason',
                     onConfirm: function (r) { A.setAdminStatus(u.id, !isAdmin, r); ui.toast('Role updated.'); }
                   });
@@ -357,9 +357,9 @@ window.WL = window.WL || {}; WL.views = WL.views || {};
           ui.select([
             { value: '', label: 'Filter by Role' },
             { value: 'student', label: 'Student' },
-            { value: 'reviewer', label: 'Peer Reviewer' },
-            { value: 'officer_admin', label: 'Officer Administrator' },
-            { value: 'teacher_advisor', label: 'Teacher Advisor' }
+            { value: 'reviewer', label: 'Reviewer' },
+            { value: 'officer', label: 'Officer' },
+            { value: 'advisor', label: 'Advisor' }
           ], st.role, function (v) { st.role = v; st.page = 1; WL.render(); },
             { label: 'Filter by role', placeholderWhenEmpty: true })),
         h('span.ctrl.ctrl-select', null,
